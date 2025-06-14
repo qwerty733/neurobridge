@@ -1,4 +1,3 @@
-
 import os
 import requests
 from flask import Flask, request
@@ -18,3 +17,6 @@ def webhook():
 @app.route("/", methods=["GET"])
 def alive():
     return "Нейро онлайн"
+
+port = int(os.environ.get("PORT", 5000))
+app.run(host="0.0.0.0", port=port)
